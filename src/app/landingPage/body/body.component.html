@@ -2,13 +2,13 @@
     <div class="col">
         <h2>*ngIf</h2>
         <hr>
-        <div class="card text-white bg-secondary mb-3" style="width: 100%">
+        <div *ngIf="show" class="card text-white bg-secondary mb-3" style="width: 100%">
             <div class="card-body">
-                <h5 class="card-title">Secondary card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <h5 class="card-title">{{uncleBen}}</h5>
+                <p class="card-text"> "{{benMenssage}}" </p>
             </div>
         </div>
-        <button class="btn btn-outline-primary btn-block">
+        <button (click)="show = !show" class="btn btn-outline-primary btn-block">
             Show/hide
         </button>
     </div>
@@ -17,11 +17,7 @@
         <h2>*ngFor</h2>
         <hr>
         <ul class="list-group">
-            <li class="list-group-item">Cras justo odio</li>
-            <li class="list-group-item">Dapibus ac facilisis in</li>
-            <li class="list-group-item">Morbi leo risus</li>
-            <li class="list-group-item">Porta ac consectetur ac</li>
-            <li class="list-group-item">Vestibulum at eros</li>
+            <li *ngFor="let character of characters; let i = index" class="list-group-item"> {{i + 1}} - {{character}} </li>
         </ul>
     </div>
 </div>
